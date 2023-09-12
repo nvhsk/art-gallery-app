@@ -3,13 +3,25 @@ import ArtPiecePreview from "../ArtPiecePreview/ArtPiecePreview";
 import Spotlight from "../Spotlight/Spotlight";
 
 export default function ArtPieces({ pieces }) {
+  let cachedPiece = null;
+
+  function getRandomPieceObject() {
+    const randomNumberFromArrayLength = Math.floor(
+      Math.random() * pieces.length
+    );
+    const randomPiece = pieces[randomNumberFromArrayLength];
+    cachedPiece = randomPiece;
+    return randomPiece;
+  }
+
   function getSpotlightPiece() {
-    const randomPiece = Math.floor(Math.random() * pieces.length);
-    const randomPieceImage = pieces[randomPiece].imageSource;
-    const randomPieceArtist = pieces[randomPiece].artist;
+    const newPiece = cachedPiece || getRandomPieceObject();
+    const randomPieceImage = newPiece.imageSource;
+    const randomPieceArtist = newPiece.artist;
 
     return { image: randomPieceImage, artist: randomPieceArtist };
   }
+
   return (
     <>
       <Spotlight

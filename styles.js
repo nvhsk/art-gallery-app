@@ -12,10 +12,6 @@ export default createGlobalStyle`
   body {
     margin: 0;
     font-family: system-ui;
-  }
-
-  a {
-    all: unset;
-    cursor: pointer;
+    color: #151515;
   }
 `;

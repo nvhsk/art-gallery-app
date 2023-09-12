@@ -23,6 +23,6 @@ const StyledSection = styled.section`
   border-radius: 10px;
   outline: 1px solid hsl(351.95121951219517, 70.68965517241381%, 50%);
   gap: 1rem;
-  color: #2c2c2f;
+  color: #151515;
   padding: 1rem 0 1rem 0;
 `;
