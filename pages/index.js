@@ -1,4 +1,6 @@
 import ArtPieces from "@/components/ArtPieces/ArtPieces";
+
+import styled from "styled-components";
 import useSWR from "swr";
 
 const URL = "https://example-apis.vercel.app/api/art";
@@ -19,9 +21,17 @@ export default function HomePage({ fetcher }) {
   }
 
   return (
-    <>
-      <h1>Art Gallery</h1>
+    <StyledMain>
+      <StyledHeadline>Art Gallery</StyledHeadline>
       <ArtPieces pieces={data} />
-    </>
+    </StyledMain>
   );
 }
+
+const StyledMain = styled.main`
+  padding: 1rem;
+`;
+const StyledHeadline = styled.h1`
+  text-align: center;
+  margin: 1rem;
+`;
