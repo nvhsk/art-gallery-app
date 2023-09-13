@@ -6,7 +6,7 @@ export default function Spotlight({ image, artist }) {
     <StyledSection>
       <h2>Todays Spotlight Art Piece</h2>
       <article>
-        <Image src={image} alt="Random Image" width={400} height={400} />
+        <StyledImage src={image} alt="Random Image" width={400} height={400} />
         <h4>From: {artist}</h4>
       </article>
     </StyledSection>
@@ -25,4 +25,8 @@ const StyledSection = styled.section`
   gap: 1rem;
   color: white;
   padding: 1rem 0 1rem 0;
+`;
+
+const StyledImage = styled(Image)`
+  border-radius: 5px;
 `;
