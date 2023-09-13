@@ -1,15 +1,28 @@
-import { SWRConfig } from "swr";
+import Layout from "@/components/Layout/Layout";
 import GlobalStyle from "../styles";
+import useSWR from "swr";
+
+const URL = "https://example-apis.vercel.app/api/art";
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 export default function App({ Component, pageProps }) {
+  const { data, error, isLoading } = useSWR(URL, fetcher);
+
+  if (isLoading) {
+    return <h1>Is loading...</h1>;
+  }
+
+  if (error) {
+    return <h1>Error: {error.message}</h1>;
+  }
+
   return (
     <>
+      <h1>Art Gallery</h1>
       <GlobalStyle />
-      <SWRConfig value={{ fetcher }}>
-        <Component {...pageProps} />
-      </SWRConfig>
+      <Component {...pageProps} data={data} />
+      <Layout />
     </>
   );
 }
