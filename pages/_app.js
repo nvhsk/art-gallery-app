@@ -21,12 +21,7 @@ export default function App({ Component, pageProps }) {
       <GlobalStyle />
       <main>
         <h1>Art Gallery</h1>
-        <Component
-          {...pageProps}
-          data={data}
-          error={error}
-          isLoading={isLoading}
-        />
+        <Component {...pageProps} data={data} />
       </main>
       <Layout />
     </>
