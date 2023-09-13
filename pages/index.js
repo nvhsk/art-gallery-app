@@ -8,10 +8,6 @@ const URL = "https://example-apis.vercel.app/api/art";
 export default function HomePage({ fetcher }) {
   const { data, error, isLoading } = useSWR(URL, fetcher);
 
-  if (!data) {
-    return null;
-  }
-
   if (isLoading) {
     return <h1>Is loading...</h1>;
   }
