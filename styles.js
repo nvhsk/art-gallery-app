@@ -14,8 +14,5 @@ export default createGlobalStyle`
     font-family: system-ui;
   }
 
-  a {
-    all: unset;
-    cursor: pointer;
-  }
+  
 `;
