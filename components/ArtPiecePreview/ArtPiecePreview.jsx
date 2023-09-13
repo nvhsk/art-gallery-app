@@ -14,17 +14,19 @@ export default function ArtPiecePreview({ image, title, artist }) {
 }
 
 const StyledArticle = styled.article`
-  background-color: #e9e7e7;
+  background-image: linear-gradient(180deg, #525252, #2e2e2e);
+  outline: 1.5px solid #2e2e2e;
   padding: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   border-radius: 10px;
+  color: white;
 `;
 
 const StyledImage = styled(Image)`
-  border-radius: 15px;
+  border-radius: 10px;
   margin-bottom: 0.5rem;
 `;
 

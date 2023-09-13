@@ -32,6 +32,12 @@ const StyledMain = styled.main`
   padding: 1rem;
 `;
 const StyledHeadline = styled.h1`
-  text-align: center;
-  margin: 1rem;
+  background-image: linear-gradient(180deg, #525252, #2e2e2e);
+  outline: 1.5px solid #2e2e2e;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  color: white;
 `;

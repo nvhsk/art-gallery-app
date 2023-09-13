@@ -13,5 +13,9 @@ export default createGlobalStyle`
     margin: 0;
     font-family: system-ui;
     color: #151515;
+    background-image: url('./bg.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 `;
