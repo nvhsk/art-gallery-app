@@ -17,5 +17,6 @@ export default createGlobalStyle`
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    overflow-x: hidden;
   }
 `;

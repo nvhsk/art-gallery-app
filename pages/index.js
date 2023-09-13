@@ -9,7 +9,11 @@ export default function HomePage({ fetcher }) {
   const { data, error, isLoading } = useSWR(URL, fetcher);
 
   if (isLoading) {
-    return <h1>Is loading...</h1>;
+    return (
+      <StyledMain>
+        <StyledHeadline>Is loading...</StyledHeadline>
+      </StyledMain>
+    );
   }
 
   if (error) {
@@ -36,4 +40,5 @@ const StyledHeadline = styled.h1`
   align-items: center;
   border-radius: 5px;
   color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 `;

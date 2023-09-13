@@ -25,8 +25,11 @@ const StyledSection = styled.section`
   gap: 1rem;
   color: white;
   padding: 1rem 0 1rem 0;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 `;
 
 const StyledImage = styled(Image)`
   border-radius: 5px;
+  outline: 3px solid white;
+  margin-bottom: 1rem;
 `;
