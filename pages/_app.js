@@ -1,6 +1,6 @@
 import Layout from "@/components/Layout/Layout";
-import GlobalStyle from "../styles";
 import useSWR from "swr";
+import GlobalStyle from "../styles";
 
 const URL = "https://example-apis.vercel.app/api/art";
 
