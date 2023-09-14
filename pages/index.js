@@ -13,6 +13,7 @@ export default function SpotlightPage({ data }) {
       image={spotlightPiece.imageSource}
       artist={spotlightPiece.artist}
       title={spotlightPiece.title}
+      slug={spotlightPiece.slug}
     />
   );
 }
