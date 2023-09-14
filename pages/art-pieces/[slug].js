@@ -6,7 +6,7 @@ export default function Slug({ data }) {
   const { slug } = router.query;
   const slugData = data.find((data) => data.slug === slug);
   if (!slugData) {
-    return <h1>Something went wrong!</h1>;
+    return <h1>404: Something went wrong 🤖</h1>;
   }
 
   return (
