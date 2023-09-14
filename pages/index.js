@@ -6,13 +6,17 @@ function getRandomPiece(pieces) {
 }
 
 export default function SpotlightPage({ data, onToggleFavorite }) {
+  // Komponente wird neugeladen, wenn Favorite Button gedrückt wird
+  // => wenn der State sich ändert
+  // heißt, es kommt wieder ein neues randomPiece
+
   const spotlightPiece = getRandomPiece(data);
 
   return (
     <Spotlight
       image={spotlightPiece.imageSource}
       artist={spotlightPiece.artist}
-      title={spotlightPiece.title}
+      title={spotlightPiece.name}
       onToggleFavorite={onToggleFavorite}
       slug={spotlightPiece.slug}
     />

@@ -1,5 +1,4 @@
 import Image from "next/image";
-import FavoriteIcon from "../../assets/heart.svg";
 
 export default function FavoriteButton({ isFavorite, onToggleFavorite, id }) {
   return (
@@ -9,7 +8,12 @@ export default function FavoriteButton({ isFavorite, onToggleFavorite, id }) {
       }}
       type="button"
     >
-      <Image src={FavoriteIcon} width={25} height={25} alt="Favorite Button" />
+      <Image
+        src="/assets/heart.svg"
+        width={25}
+        height={25}
+        alt="Favorite Button"
+      />
     </button>
   );
 }

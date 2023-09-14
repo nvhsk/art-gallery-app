@@ -44,6 +44,7 @@ export default function App({ Component, pageProps }) {
         {...pageProps}
         data={data}
         onToggleFavorite={handleArtPiecesInfo}
+        artPiecesInfo={artPiecesInfo}
       />
       <Layout />
     </>

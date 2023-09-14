@@ -10,7 +10,7 @@ export default function Spotlight({
 }) {
   return (
     <>
-      <h3>Spotlight:</h3>
+      <h3>Spotlight: {title}</h3>
       <Image src={image} alt={title} width={250} height={250}></Image>
       <h4>{artist}</h4>
       <FavoriteButton id={slug} onToggleFavorite={onToggleFavorite} />
