@@ -18,7 +18,8 @@ export default function Favorites({ data, artPiecesInfo, onToggleFavorite }) {
 
   console.log(filteredData);
 
-  // Jetzt haben wir die korrekte Datenstruktur, aber das Löschen funktioniert noch nicht.
+  // * Jetzt haben wir die korrekte Datenstruktur, aber das Löschen funktioniert noch nicht.
+  // * Bei Neuladen der Seite, gehen alle Favoriten verloren.
 
   return (
     <ArtPieces pieces={filteredData} onToggleFavorite={onToggleFavorite} />
