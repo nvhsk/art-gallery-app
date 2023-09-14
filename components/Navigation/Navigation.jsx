@@ -6,11 +6,9 @@ export default function Navigation() {
     <StyledNavigation>
       <ul>
         <li>
-          {" "}
           <Link href="/">Spotlight</Link>
         </li>
         <li>
-          {" "}
           <Link href="/art-pieces">Art Pieces</Link>
         </li>
       </ul>

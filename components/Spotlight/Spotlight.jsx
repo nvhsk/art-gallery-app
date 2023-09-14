@@ -5,7 +5,7 @@ export default function Spotlight({ image, artist, title, slug }) {
   return (
     <Link href={`/art-pieces/${slug}`}>
       <h3>Spotlight:</h3>
-      <Image src={image} alt={title} width={250} height={250}></Image>
+      <Image src={image} alt={title} width={250} height={250} />
       <h4>{artist}</h4>
     </Link>
   );

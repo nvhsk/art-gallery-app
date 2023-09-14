@@ -4,7 +4,7 @@ export default function ArtPieceDetails({ image, title, artist, year, genre }) {
   return (
     <>
       <h2>{title}</h2>
-      <Image src={image} width={350} height={350} alt={`Image of ${title}`} />
+      <Image src={image} width={350} height={350} alt={title} />
       <p>
         <strong>Artist: </strong>
         {artist}
