@@ -4,7 +4,9 @@ import { useRouter } from "next/router";
 export default function Slug({ data }) {
   const router = useRouter();
   const { slug } = router.query;
+
   const slugData = data.find((data) => data.slug === slug);
+
   if (!slugData) {
     return <h1>404: Something went wrong 🤖</h1>;
   }
