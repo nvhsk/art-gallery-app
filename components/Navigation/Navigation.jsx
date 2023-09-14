@@ -3,20 +3,18 @@ import styled from "styled-components";
 
 export default function Navigation() {
   return (
-    <>
-      <StyledNavigation>
-        <ul>
-          <li>
-            {" "}
-            <Link href="/">Spotlight</Link>
-          </li>
-          <li>
-            {" "}
-            <Link href="/art-pieces">Art Pieces</Link>
-          </li>
-        </ul>
-      </StyledNavigation>
-    </>
+    <StyledNavigation>
+      <ul>
+        <li>
+          {" "}
+          <Link href="/">Spotlight</Link>
+        </li>
+        <li>
+          {" "}
+          <Link href="/art-pieces">Art Pieces</Link>
+        </li>
+      </ul>
+    </StyledNavigation>
   );
 }
 

@@ -9,12 +9,10 @@ export default function SpotlightPage({ data }) {
   const spotlightPiece = getRandomPiece(data);
 
   return (
-    <>
-      <Spotlight
-        image={spotlightPiece.imageSource}
-        artist={spotlightPiece.artist}
-        title={spotlightPiece.title}
-      />
-    </>
+    <Spotlight
+      image={spotlightPiece.imageSource}
+      artist={spotlightPiece.artist}
+      title={spotlightPiece.title}
+    />
   );
 }
