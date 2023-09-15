@@ -1,8 +1,13 @@
-import { useRouter } from "next/router";
 import ArtPieceDetails from "@/components/ArtPieceDetails/ArtPieceDetails";
+import FavoriteButton from "@/components/FavoriteButton/FavoriteButton";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
-export default function ArtPieceDetailsPage({ data }) {
+export default function ArtPieceDetailsPage({
+  data,
+  artPiecesInfo,
+  onToggleFavorite,
+}) {
   const router = useRouter();
   const { slug } = router.query;
 
@@ -24,6 +29,11 @@ export default function ArtPieceDetailsPage({ data }) {
       <button>
         <Link href="/art-pieces">Back to all Art Pieces</Link>
       </button>
+      <FavoriteButton
+        artPiecesInfo={artPiecesInfo}
+        onToggleFavorite={onToggleFavorite}
+        id={currentPiece.slug}
+      />
     </>
   );
 }
