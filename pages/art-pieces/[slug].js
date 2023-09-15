@@ -28,9 +28,7 @@ export default function ArtPieceDetailsPage({
         year={currentPiece.year}
         genre={currentPiece.genre}
       />
-      <button>
-        <Link href="/art-pieces">Back to all Art Pieces</Link>
-      </button>
+      <Link href="/art-pieces">Back to all Art Pieces</Link>
       <FavoriteButton
         artPiecesInfo={artPiecesInfo}
         onToggleFavorite={onToggleFavorite}
