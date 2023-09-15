@@ -1,19 +1,36 @@
 import Image from "next/image";
 
-export default function FavoriteButton({ isFavorite, onToggleFavorite, id }) {
+export default function FavoriteButton({
+  onToggleFavorite,
+  id,
+  artPiecesInfo,
+}) {
+  let isFavorite = false;
+
+  function isPieceFavorite(id) {
+    if (artPiecesInfo.find((piece) => piece.id === id && piece.isFavorite)) {
+      isFavorite = true;
+    }
+  }
+  isPieceFavorite(id);
+
   return (
     <button
       onClick={() => {
-        onToggleFavorite(id, isFavorite);
+        onToggleFavorite(id);
       }}
       type="button"
     >
-      <Image
-        src="/assets/heart.svg"
-        width={25}
-        height={25}
-        alt="Favorite Button"
-      />
+      {isFavorite ? (
+        <Image
+          src="/assets/heart.svg"
+          width={25}
+          height={25}
+          alt="Favorite Button"
+        />
+      ) : (
+        "Not favorite"
+      )}
     </button>
   );
 }

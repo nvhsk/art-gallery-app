@@ -1,24 +1,34 @@
 import Spotlight from "@/components/Spotlight/Spotlight";
+import { useEffect, useState } from "react";
 
 function getRandomPiece(pieces) {
   const randomIndex = Math.floor(Math.random() * pieces.length);
   return pieces[randomIndex];
 }
 
-export default function SpotlightPage({ data, onToggleFavorite }) {
-  // Komponente wird neugeladen, wenn Favorite Button gedrückt wird
-  // => wenn der State sich ändert
-  // heißt, es kommt wieder ein neues randomPiece
+export default function SpotlightPage({
+  data,
+  onToggleFavorite,
+  artPiecesInfo,
+}) {
+  const [piece, setPiece] = useState(null);
 
-  const spotlightPiece = getRandomPiece(data);
+  useEffect(() => {
+    setPiece(getRandomPiece(data));
+  }, []);
+
+  if (!piece) {
+    return;
+  }
 
   return (
     <Spotlight
-      image={spotlightPiece.imageSource}
-      artist={spotlightPiece.artist}
-      title={spotlightPiece.name}
+      image={piece.imageSource}
+      artist={piece.artist}
+      title={piece.name}
       onToggleFavorite={onToggleFavorite}
-      slug={spotlightPiece.slug}
+      slug={piece.slug}
+      artPiecesInfo={artPiecesInfo}
     />
   );
 }
