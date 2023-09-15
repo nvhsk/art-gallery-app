@@ -29,7 +29,12 @@ export default function FavoriteButton({
           alt="Favorite Button"
         />
       ) : (
-        "Not favorite"
+        <Image
+          src="/assets/emptyheart.png"
+          width={25}
+          height={25}
+          alt="Favorite Button"
+        />
       )}
     </button>
   );
