@@ -13,19 +13,20 @@ export default function App({ Component, pageProps }) {
   const [artPiecesInfo, setArtPiecesInfo] = useLocalStorageState("pieces", {
     defaultValue: [],
   });
-
+  console.log(artPiecesInfo);
   function handleSubmitComment(id, comment) {
-    const existingPiece = artPiecesInfo.find((piece) => piece.id === id);
-    if (existingPiece) {
-      const updatedArtPiecesInfo = artPiecesInfo.map((artPiece) => {
-        if (artPiece.id === id && artPiece.comments) {
-          return {
-            ...artPiece,
-            comments: [...artPiece.comments, comment],
-          };
-        }
-        return artPiece;
-      });
+    const existingPieceIndex = artPiecesInfo.findIndex(
+      (piece) => piece.id === id
+    );
+
+    if (existingPieceIndex !== -1) {
+      const updatedArtPiecesInfo = [...artPiecesInfo];
+      updatedArtPiecesInfo[existingPieceIndex] = {
+        ...updatedArtPiecesInfo[existingPieceIndex],
+        comments: updatedArtPiecesInfo[existingPieceIndex].comments
+          ? [...updatedArtPiecesInfo[existingPieceIndex].comments, comment]
+          : [comment],
+      };
       setArtPiecesInfo(updatedArtPiecesInfo);
     } else {
       setArtPiecesInfo([
